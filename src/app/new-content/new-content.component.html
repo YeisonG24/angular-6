@@ -1,14 +1,32 @@
 <div>
-    <ul>
-        <li *ngFor="let user of users">
-            <app-user [nameUser]="user"></app-user>
-        </li>
-    </ul>
+    <div class="container-form">
+        <form (submit)="addUser(newUser)">
+            <input type="text" #newUser>
+            <button>Send User</button>
+        </form>
+        <ul class="ul-list">
+            <li *ngFor="let user of users">
+                <div class="item">
+                    <app-user [nameUser]="user"></app-user>
+                    <button (click)="deleteUser(user)">x</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <form>
+        <input type="text" name="name" [(ngModel)]="name">
+        <input type="text" name="age" [(ngModel)]="age">
+    </form>
     <p>Name: {{ name }}</p>
+    <p>Age: {{ age }}</p>
     <p>Street: {{ address.street }}</p>
     <p>City: {{ address.city }}</p>
     <ul>
         <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
     </ul>
     <p *ngIf="activated">Activate</p>
+    <button (click)="sayHello()">
+        Click me!
+    </button>
 </div>
