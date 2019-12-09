@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-new-content',
   templateUrl: './new-content.component.html',
@@ -15,6 +17,7 @@ export class NewContentComponent implements OnInit {
     city: string;
   };
   hobbies: string[];
+  posts = [];
 
   sayHello() {
     alert('Hello user');
@@ -37,12 +40,15 @@ export class NewContentComponent implements OnInit {
     }
   }
 
-  constructor() {
+  constructor(private dataService: DataService) {
     this.address = {
       street: 'Backer Street',
       city: 'London'
     }
     this.hobbies = ['swimming', 'read', 'write'];
+    this.dataService.getData().subscribe(data => {
+      this.posts = data;
+    });
   }
 
   ngOnInit() {
