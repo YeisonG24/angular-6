@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewContentComponent implements OnInit {
   users = ['ryan', 'joe', 'cameron']
-  activated = true;
+  activated: boolean = true;
+  name: string = 'Ryan Ray'
+  age: number;
+  address:  {
+    street: string;
+    city: string;
+  };
+  hobbies: string[];
 
-  constructor() { }
+  constructor() {
+    this.age = 28;
+    this.address = {
+      street: 'Backer Street',
+      city: 'London'
+    }
+    this.hobbies = ['swimming', 'read', 'write'];
+  }
 
   ngOnInit() {
   }

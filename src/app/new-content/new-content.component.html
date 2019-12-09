@@ -1,6 +1,14 @@
 <div>
     <ul>
-        <li *ngFor="let user of users">{{ user }}</li>
+        <li *ngFor="let user of users">
+            <app-user [nameUser]="user"></app-user>
+        </li>
+    </ul>
+    <p>Name: {{ name }}</p>
+    <p>Street: {{ address.street }}</p>
+    <p>City: {{ address.city }}</p>
+    <ul>
+        <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
     </ul>
     <p *ngIf="activated">Activate</p>
 </div>
