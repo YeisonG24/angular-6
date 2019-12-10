@@ -1,0 +1,40 @@
+<div class="main-container">
+    <div class="container-form">
+        <form (submit)="addUser(newUser)" class="form-user">
+            <input type="text" #newUser class="name-user">
+            <button>Send User</button>
+        </form>
+        <ul class="ul-list">
+            <li *ngFor="let user of users" class="ul-list">
+                <div class="item-li">
+                    <app-user [nameUser]="user"></app-user>
+                    <button (click)="deleteUser(user)" class="button-delete">x</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <div class="information-container">
+            <form>
+                <input type="text" name="name" [(ngModel)]="name" class="name-user">
+                <input type="text" name="age" [(ngModel)]="age" class="name-user">
+            </form>
+            <p>Name: {{ name }}</p>
+            <p>Age: {{ age }}</p>
+            <p>Street: {{ address.street }}</p>
+            <p>City: {{ address.city }}</p>
+            <ul>
+                <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
+            </ul>
+            <p *ngIf="activated">Activate</p>
+            <button (click)="sayHello()">
+                Click me!
+            </button>
+        </div>
+    
+        <div *ngFor="let post of posts" class="comments">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.body }}</p>
+        </div>
+    </div>
+</div>

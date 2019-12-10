@@ -1,0 +1,8 @@
+<h3>About</h3>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare porttitor imperdiet. Integer ac dui justo. Etiam tincidunt finibus lacus, a hendrerit arcu imperdiet iaculis. Pellentesque suscipit elit id augue ornare laoreet. Mauris imperdiet nisl non magna eleifend, in viverra metus viverra. Phasellus aliquam feugiat feugiat. Vivamus iaculis, felis vel sagittis porttitor, ex dolor auctor urna, sit amet accumsan nulla sapien et nulla. Ut dui est, consectetur eu commodo vitae, sodales in sapien. In vitae venenatis leo. Duis placerat justo erat, at fringilla tortor pulvinar scelerisque. Maecenas gravida, sapien vitae mollis suscipit, neque purus tempor lectus, ac maximus ligula massa at odio. Mauris eget urna enim.
+</p>
+<div *ngFor="let post of posts" class="comments">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body }}</p>
+</div>
